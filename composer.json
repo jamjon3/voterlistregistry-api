@@ -1,0 +1,27 @@
+{
+    "name": "ymd/votertoolsregistry-api",
+    "description": "Composer API for VoterToolsRegistry",
+    "type": "library",
+    "require": {
+        "php": "^7.1.3",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable",
+        "phpunit/dbunit": ">=1.3.2",
+        "squizlabs/php_codesniffer": "2.1.*"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "James Jones",
+            "email": "jamjon3@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+           "YMD\\VoterToolsRegistryAPI\\": [ "src/", "tests/" ]
+        }
+    }
+}
