@@ -1,5 +1,5 @@
 {
-    "name": "ymd/votertoolsregistry-api",
+    "name": "ymd/voterlistregistry-api",
     "description": "Composer API for VoterToolsRegistry",
     "type": "library",
     "require": {
@@ -21,7 +21,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-           "YMD\\VoterToolsRegistryAPI\\": [ "src/", "tests/" ]
+           "YMD\\VoterListRegistryAPI\\": [ "src/", "tests/" ]
         }
     }
 }
