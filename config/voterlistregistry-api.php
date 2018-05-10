@@ -4,68 +4,36 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | CiviCRM server path 
+    | VoterListRegistry server path 
     |--------------------------------------------------------------------------
     |
-    | Basically, the domain/server address of your CiviCRM installation.
+    | Basically, the domain/server address of your VoterListRegistry installation.
     | 
     */
 
-    'civi_host' => env('CIVI_HOST', 'http://example.com'),
+    'voterlistregistry_host' => env('VOTERLISTREGISTRY_HOST', 'http://example.com'),
 
     /*
     |--------------------------------------------------------------------------
-    | CiviCRM integration.
+    | VoterListRegistry service user 
     |--------------------------------------------------------------------------
     |
-    | CiviCRM Integration. Can be wordpress, drupal or joomla.
-    | Defaults to Wordpress... 
-    |
+    | Basically, the service user for your VoterListRegistry conections.
+    | 
     */
 
-    'civi_integration' => env('CIVI_INTEGRATION', 'wordpress'),
+    'voterlistregistry_user' => env('VOTERLISTREGISTRY_USER', 'admin'),
 
     /*
     |--------------------------------------------------------------------------
-    | Integration paths
+    | VoterListRegistry service password 
     |--------------------------------------------------------------------------
     |
-    | Lets you set the actual path to the api depending on the integration.
-    | Those are defaults at this time, your mileage might vary, you can adjust 
-    | them here.
-    |
+    | Basically, the service password for your VoterListRegistry conections.
+    | 
     */
 
-    'civi_wordpress_path' => env('CIVI_WORDPRESS_PATH', '/wp-content/plugins/civicrm/civicrm/extern/rest.php'),
-    'civi_drupal_path' => env('CIVI_DRUPAL_PATH', '/sites/all/modules/civicrm/extern/rest.php'),
-    'civi_joomla_path' => env('CIVI_DRUPAL_PATH', '/administrator/components/com_civicrm/civicrm/extern/rest.php'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Site Key
-    |--------------------------------------------------------------------------
-    |
-    | This is the site key. It is defined in your civicrm.settings.php
-
-        More info at http://wiki.civicrm.org/confluence/display/CRMDOC/Command-line+Script+Configuration
-            if (!defined('CIVICRM_SITE_KEY')) {
-                define( 'CIVICRM_SITE_KEY', '17f8752f266955cd55ed512b6ef66c71');
-            }
-    |
-    */
-
-    'civi_site_key' => env('CIVI_SITE_KEY', ''),
-
-    /*
-    |--------------------------------------------------------------------------
-    | User key... 
-    |--------------------------------------------------------------------------
-    |
-    | This one is a little more complicated, this is the user key used for making
-    | the api call. 
-    */
-
-    'civi_user_key' => env('CIVI_USER_KEY', ''),
+    'voterlistregistry_password' => env('VOTERLISTREGISTRY_PASSWORD', 'password'),
 
     /*
     |--------------------------------------------------------------------------
@@ -80,6 +48,6 @@ return [
     | Default values are usually fine... unless you need to spoof the referer.
     */
 
-    'http_user_agent' => env('CIVI_USER_AGENT', 'laravel-civiapi3'),
-    'http_referer' => env('CIVI_HTTP_REFERER', env('APP_URL'))
+    'http_user_agent' => env('VOTERLISTREGISTRY_USER_AGENT', 'laravel-voterlistregistry-api'),
+    'http_referer' => env('VOTERLISTREGISTRY_HTTP_REFERER', env('APP_URL'))
 ];
