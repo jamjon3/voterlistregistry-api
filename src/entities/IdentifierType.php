@@ -5,17 +5,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 namespace YMD\VoterListRegistryAPI\entities;
+
 /**
- * Description of Identity
+ * Description of IdentifierType
  *
  * @author jam
  */
-class Identity extends BasicEntity {
+class IdentifierType extends BasicEntity {
   private $jwt;
   public function __construct() {
     parent::__construct();
     $this->jwt = $this->getJWT();
   }
-  
+  public function getIdentifierTypes() {
+    $ch = $this->getCurlHandle("/api/type/identifier");
+    
+  }
 }
