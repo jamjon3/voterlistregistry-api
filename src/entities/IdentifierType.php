@@ -20,7 +20,6 @@ class IdentifierType extends BasicEntity {
     $this->jwt = $this->getJWT();
   }
   public function getIdentifierTypes() {
-    $ch = $this->getCurlHandle("/api/type/identifier");
-    
+    return $this->apiRequest("GET", "/api/type/identifier");
   }
 }
