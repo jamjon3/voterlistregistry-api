@@ -14,10 +14,8 @@ namespace YMD\VoterListRegistryAPI\entities;
  * @author jam
  */
 class IdentifierType extends BasicEntity {
-  private $jwt;
   public function __construct() {
     parent::__construct();
-    $this->jwt = $this->getJWT();
   }
   public function getIdentifierTypes() {
     return $this->apiRequest("GET", "/api/type/identifier");

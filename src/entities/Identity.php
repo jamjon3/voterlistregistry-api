@@ -12,10 +12,8 @@ namespace YMD\VoterListRegistryAPI\entities;
  * @author jam
  */
 class Identity extends BasicEntity {
-  private $jwt;
   public function __construct() {
     parent::__construct();
-    $this->jwt = $this->getJWT();
   }
   
 }
