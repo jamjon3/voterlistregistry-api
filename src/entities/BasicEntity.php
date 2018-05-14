@@ -71,7 +71,7 @@ class BasicEntity {
       if (!empty($headers['Authorization'])) {
         $this->jwt = \explode(" ", $headers['Authorization'])[1];
       }
-      return $this->jwt;
+      return isset($this->jwt)?$this->jwt:"";
     }
   }
   /**
