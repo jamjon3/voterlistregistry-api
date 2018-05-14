@@ -21,7 +21,7 @@ abstract class AbstractAPI {
   public function __get(string $entity): object {
     if(\array_key_exists($entity, $this->entities)) {
       if(!isset($this->entities[$entity])) {
-        $this->entities[$entity] = new \join("\\", ['\YMD\VoterListRegistryAPI\entities',$entity]);
+        $this->entities[$entity] = new \implode("\\", ['\YMD\VoterListRegistryAPI\entities',$entity]);
       }
       return $this->entities[$entity];
     }
