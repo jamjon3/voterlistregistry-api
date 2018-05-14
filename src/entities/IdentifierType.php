@@ -17,7 +17,7 @@ class IdentifierType extends BasicEntity {
   public function __construct() {
     parent::__construct();
   }
-  public function getIdentifierTypes() {
+  public function getIdentifierTypes(int $limit=5000) {
     return $this->apiRequest("GET", "/api/type/identifier");
   }
 }

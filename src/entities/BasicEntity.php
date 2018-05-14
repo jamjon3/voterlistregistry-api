@@ -29,7 +29,12 @@ class BasicEntity {
     // VOTERLISTREGISTRY_PASSWORD param for JWT.
     $this->jwtpassword = config('voterlistregistry-api.voterlistregistry_password');
   }    
-  public function getJWT() {
+  /**
+   * Retrieves the existing or makes a request to obtain the JWT
+   * 
+   * @return string
+   */
+  public function getJWT(): string {
     if(isset($this->jwt)) {
       return $this->jwt;
     } else {
@@ -69,7 +74,13 @@ class BasicEntity {
       return $this->jwt;
     }
   }
-  private function headersToArray($raw) {
+  /**
+   * Parses raw headers into an array
+   * 
+   * @param string $raw
+   * @return array
+   */
+  private function headersToArray(string $raw): array {
     $headers=array();
     $data=\explode("\n",$raw);
     $headers['status']=$data[0];
@@ -80,7 +91,16 @@ class BasicEntity {
     }
     return $headers;
   }
-  public function apiRequest(string $method, string $path, array $query=[], array $body=[]) {
+  /**
+   * API Request handler
+   * 
+   * @param string $method
+   * @param string $path
+   * @param array $query
+   * @param array $body
+   * @return array
+   */
+  public function apiRequest(string $method, string $path, array $query=[], array $body=[]): array {
     $ch = curl_init();                                                                      
     // Disable SSL verification
     \curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -109,6 +129,6 @@ class BasicEntity {
 		$result = \curl_exec($ch);
 		//close connection
     \curl_close($ch);
-		return $result;
+    return \json_decode($result, TRUE);
   }
 }
