@@ -130,6 +130,8 @@ class BasicEntity {
 		//close connection
     \curl_close($ch);
     $response = \json_decode($result, TRUE);
-    return isset($response)?$response:[];
+    return isset($response)?$response:[
+      "error" => "No response from server"
+    ];
   }
 }
