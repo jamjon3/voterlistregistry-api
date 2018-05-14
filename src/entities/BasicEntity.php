@@ -129,6 +129,7 @@ class BasicEntity {
 		$result = \curl_exec($ch);
 		//close connection
     \curl_close($ch);
-    return \json_decode($result, TRUE);
+    $response = \json_decode($result, TRUE);
+    return isset($response)?$response:[];
   }
 }
